@@ -1,0 +1,129 @@
+<div fxShow="true" fxHide.lt-md fxFlex fxLayout>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <mat-icon>games</mat-icon>
+            <a class="navbar-brand" style="padding: 5px">GAMING SITE</a>
+            <span class="flexExpand"></span>
+            <div fxFlex fxLayoutAlign="flex-end center">
+                <a href="#" mat-button [routerLink]="['/home']">Log-Out</a>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>
+<mat-tab-group color="accent" backgroundColor="primary">
+    <mat-tab label="Games">
+        <!-- <mat-paginator [length]="50" [pageSizeOptions]="[5]"> </mat-paginator> -->
+        <mat-divider></mat-divider>
+
+        <mat-card class="example-card">
+
+            <mat-card-header>
+                <a [routerLink]="['/sign-up']">
+                    <div mat-card-avatar class="example-header-image"></div>
+                </a>
+                <mat-card-title>FIFA 2020</mat-card-title>
+                <mat-card-subtitle>EA sports</mat-card-subtitle>
+            </mat-card-header>
+
+            <img mat-card-image
+                src="https://tse3.mm.bing.net/th?id=OIP.Kq5Uhv3mTZU5zGEdZWcBiAHaD9&pid=Api&P=0&w=318&h=171"
+                alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <p>
+                    FIFA 20 Gameplay Features put you at the centre of every match. Feel the passion of an entire
+                    continent’s footballing obsession. Play South America’s biggest club competitions in FIFA 20 now!*
+                    From the top 100 players in world football to 5* skillers and FUT ICONS, check out the official FIFA
+                    20 Player Ratings.
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button>LIKE</button>
+                <button mat-button>SHARE</button>
+                <mat-divider></mat-divider>
+            </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="example-card">
+
+            <mat-card-header>
+                <a [routerLink]="['/sign-up']">
+                    <div mat-card-avatar class="example-header-image"></div>
+                </a>
+                <mat-card-title>FIFA 2020</mat-card-title>
+                <mat-card-subtitle>EA sports</mat-card-subtitle>
+            </mat-card-header>
+
+            <img mat-card-image
+                src="https://tse3.mm.bing.net/th?id=OIP.Kq5Uhv3mTZU5zGEdZWcBiAHaD9&pid=Api&P=0&w=318&h=171"
+                alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <p>
+                    FIFA 20 Gameplay Features put you at the centre of every match. Feel the passion of an entire
+                    continent’s footballing obsession. Play South America’s biggest club competitions in FIFA 20 now!*
+                    From the top 100 players in world football to 5* skillers and FUT ICONS, check out the official FIFA
+                    20 Player Ratings.
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button>LIKE</button>
+                <button mat-button>SHARE</button>
+                <mat-divider></mat-divider>
+            </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="example-card">
+
+            <mat-card-header>
+                <a [routerLink]="['/sign-up']">
+                    <div mat-card-avatar class="example-header-image"></div>
+                </a>
+                <mat-card-title>FIFA 2020</mat-card-title>
+                <mat-card-subtitle>EA sports</mat-card-subtitle>
+            </mat-card-header>
+
+            <img mat-card-image
+                src="https://tse3.mm.bing.net/th?id=OIP.Kq5Uhv3mTZU5zGEdZWcBiAHaD9&pid=Api&P=0&w=318&h=171"
+                alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <p>
+                    FIFA 20 Gameplay Features put you at the centre of every match. Feel the passion of an entire
+                    continent’s footballing obsession. Play South America’s biggest club competitions in FIFA 20 now!*
+                    From the top 100 players in world football to 5* skillers and FUT ICONS, check out the official FIFA
+                    20 Player Ratings.
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button>LIKE</button>
+                <button mat-button>SHARE</button>
+                <mat-divider></mat-divider>
+            </mat-card-actions>
+        </mat-card>
+    </mat-tab>
+
+    <mat-tab label="Profile">
+        <!-- <ng-template mat-tab-label>
+            <div mat-card-avatar class="example-header-image"></div>
+            Profile
+        </ng-template> -->
+        <app-profile></app-profile>
+    </mat-tab>
+
+    <mat-tab label="Invite People">
+        <app-invites></app-invites>
+    </mat-tab>
+    <mat-tab><span class="example-spacer"></span></mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <a>
+                <mat-card-header>
+
+                </mat-card-header>
+            </a>
+        </ng-template>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <button mat-icon-button>Log out</button>
+        </ng-template>
+    </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,52 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="register">
+    <mat-card>
+
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <mat-card-header>
+                <h2 class="form-signin-heading">Change Password</h2>
+            </mat-card-header>
+
+            <div class="form-group">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label for="oldPassword">Old Password</mat-label>
+                    <input type="password" matInput class="form-control" id="oldPassword"
+                        formControlName="oldPassword" />
+                    <mat-error *ngIf="oldPassword?.invalid && oldPassword?.touched" class="alert alert-danger">
+                        <mat-error *ngIf="oldPassword?.errors?.required">Password is required.</mat-error>
+                        <!-- <div *ngIf="oldPassword?.errors?.__zone_symbol__value?.invalidOldPassword">Invalid Password.</div> -->
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label for="newPassword">New Password</mat-label>
+                    <input type="password" matInput class="form-control" id="newPassword"
+                        formControlName="newPassword" />
+                    <mat-error *ngIf="newPassword?.invalid && newPassword?.touched" class="alert alert-danger">
+                        <mat-error *ngIf="newPassword?.errors?.required">Enter Your New Password.</mat-error>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label for="confirm">Confirm Password</mat-label>
+                    <input type="password" matInput class="form-control" id="confirm" formControlName="confirm" />
+                    <mat-error *ngIf="confirm?.invalid && confirm?.touched" class="alert alert-danger">
+                        <mat-error *ngIf="confirm?.errors?.required">Confirm New Password.</mat-error>
+                    </mat-error>
+                    <mat-error *ngIf="confirm?.valid && myForm.invalid && myForm.errors?.passowordShouldMatch"
+                        class="alert alert-danger">
+                        Passwords do not match.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <button mat-stroked-button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">
+                Change Password
+            </button>
+        </form>
+
+    </mat-card>
+</div>

@@ -1,0 +1,90 @@
+<style></style>
+
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <mat-icon>games</mat-icon>
+        <a class="navbar-brand" style="padding: 5px">GAMING SITE</a>
+        <span class="flexExpand"></span>
+        <div>
+            <a mat-button [routerLink]="['/sign-up']"> Create Free Account </a>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-grid-list cols="2">
+    <mat-grid-tile>
+        <mat-card class="card">
+            <mat-card-header>
+                <div mat-card-avatar class="city-connect"></div>
+                <mat-card-title>GAMING SITE</mat-card-title>
+                <mat-card-subtitle>Connect People</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p>
+                    GAMING SITE WITH EASY SCHEDULING SOFTWARE TO HELP PEOPLE CONNECT EASILY FOR HAVING FUN
+                </p>
+            </mat-card-content>
+            <img src="https://cdn.logojoy.com/wp-content/uploads/2018/05/01112536/5_big12.png"
+                width="400" />
+
+            <div class="get-started">
+                <button mat-stroked-button color="primary" [routerLink]="['/sign-up']">
+                    Create Free Account
+                </button>
+            </div>
+        </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+        <mat-card class="card">
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" class="login-form">
+                <mat-card-header>
+                    <mat-card-title> Already a Customer ? Login Here</mat-card-title>
+                </mat-card-header>
+                <mat-card-content fxLayout="column">
+                    <div class="form-group">
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input type="email" matInput placeholder="pat@example.com" class="form-control"
+                                formControlName="email" />
+                            <mat-error *ngIf="email?.touched && email?.invalid">
+                                <mat-error *ngIf="email?.errors?.required">
+                                    Email is <strong>required</strong>
+                                </mat-error>
+                                <mat-error *ngIf="email?.errors?.pattern">
+                                    invalid email
+                                </mat-error>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="form-group">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'" class="form-control"
+                                formControlName="password" required />
+                            <mat-error *ngIf="password?.touched && password?.invalid">
+                                <mat-error *ngIf="password?.errors?.required">
+                                    Password is <strong>required</strong>
+                                </mat-error>
+                                <mat-error *ngIf="password?.touched && !password?.errors?.minLength">
+                                    Password must be min 8 characetrs
+                                </mat-error>
+                            </mat-error>
+
+                            <mat-icon matSuffix (click)="hide = !hide">{{
+                                hide ? "visibility_off" : "visibility"
+                                }}</mat-icon>
+                            <mat-hint *ngIf="!password?.value">Enter your password</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </mat-card-content>
+                <div class="button">
+                    <button mat-stroked-button disabled color="primary" [disabled]="!myForm.valid">
+                        Login
+                    </button>
+                </div>
+            </form>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

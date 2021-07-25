@@ -1,0 +1,71 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="register">
+    <mat-card>
+
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+            <mat-card-header>
+                <h2 class="form-signin-heading">New Schedule</h2>
+            </mat-card-header>
+
+            <div class="form-group">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label for="game_name">Select your game...</mat-label>
+                    <mat-select matInput class="form-control" formControlName="game_name">
+                        <mat-option *ngFor="let game of games" [value]="game">{{
+                            game
+                            }}</mat-option>
+                    </mat-select>
+                    <!-- <mat-error *ngIf="game_name?.invalid && game_name?.touched" class="alert alert-danger">
+                        <mat-error *ngIf="game_name?.errors?.required">Password is required.</mat-error>
+                    </mat-error> -->
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label for="no_players">Number of Players</mat-label>
+                    <input type="number" matInput class="form-control" id="no_players" formControlName="no_players" />
+                    <!-- <mat-error *ngIf="no_players?.invalid && no_players?.touched" class="alert alert-danger">
+                        <mat-error *ngIf="no_players?.errors?.required">Password is required.</mat-error>
+                    </mat-error> -->
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label for="schedule_type">Type of Schedule</mat-label>
+                    <mat-select matInput class="form-control" formControlName="schedule_type">
+                        <mat-option *ngFor="let s of schedules" [value]="s">{{
+                            s
+                            }}</mat-option>
+                    </mat-select>
+                    <!-- <mat-error *ngIf="no_players?.invalid && no_players?.touched" class="alert alert-danger">
+                        <mat-error *ngIf="no_players?.errors?.required">Password is required.</mat-error>
+                    </mat-error> -->
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label for="date">Date</mat-label>
+                    <input type="date" matInput class="form-control" id="date" formControlName="date" />
+                    <!-- <mat-error *ngIf="no_players?.invalid && no_players?.touched" class="alert alert-danger">
+                        <mat-error *ngIf="no_players?.errors?.required">Password is required.</mat-error>
+                    </mat-error> -->
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label for="time">Time</mat-label>
+                    <input type="time" matInput class="form-control" id="time" formControlName="time" />
+                    <!-- <mat-error *ngIf="no_players?.invalid && no_players?.touched" class="alert alert-danger">
+                        <mat-error *ngIf="no_players?.errors?.required">Password is required.</mat-error>
+                    </mat-error> -->
+                </mat-form-field>
+            </div>
+
+            <button mat-stroked-button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">
+                Schedule
+            </button>
+        </form>
+
+    </mat-card>
+</div>

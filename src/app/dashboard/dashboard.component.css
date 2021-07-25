@@ -1,0 +1,11 @@
+.example-card {
+  margin: 0 auto;
+  width: 30%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.example-header-image {
+  background-image: url("https://tse3.mm.bing.net/th?id=OIP.Kq5Uhv3mTZU5zGEdZWcBiAHaD9&pid=Api&P=0&w=318&h=171");
+  background-size: cover;
+}

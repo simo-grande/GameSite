@@ -1,0 +1,124 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <mat-icon>games</mat-icon>
+        <a class="navbar-brand" style="padding: 5px">GAMING SITE</a>
+        <span class="flexExpand"></span>
+        <div>
+            <a mat-button [routerLink]="['/home']"> Already have an account ? </a>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div fxLayout="row" fxLayoutAlign="center center" class="register">
+    <mat-card>
+        <form [formGroup]="myForm" (ngSubmit)="submit(myForm)">
+            <mat-card-header>
+                <mat-card-title>Register</mat-card-title>
+            </mat-card-header>
+            <mat-card-content fxLayout="column">
+                <div class="form-group">
+                    <mat-form-field appearance="outline" class="input">
+                        <mat-label>First Name</mat-label>
+                        <input type="text" matInput placeholder="first Name" class="form-control"
+                            formControlName="firstName" />
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        <mat-error *ngIf="firstName?.touched && firstName?.errors?.required">first name required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field appearance="outline" class="input">
+                        <mat-label>Last Name</mat-label>
+                        <input type="text" matInput placeholder="Last Name" class="form-control"
+                            formControlName="lastName" />
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        <mat-error *ngIf="lastName?.touched && lastName?.errors?.required">Last name required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field appearance="outline" class="input">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput placeholder="pat@example.com" class="form-control"
+                            formControlName="email" />
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        <mat-error *ngIf="email?.touched && email?.errors?.required">Email required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field appearance="outline" class="input">
+                        <mat-label>Phone Number</mat-label>
+                        <span matPrefix>+1 &nbsp;</span>
+                        <input type="tel" matInput placeholder="0000000000" class="form-control"
+                            formControlName="phone_number" />
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        <mat-hint>Hint</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field appearance="outline" class="input">
+                        <mat-label>State</mat-label>
+                        <mat-select matInput class="form-control" formControlName="state">
+                            <mat-option *ngFor="let state of states" [value]="state">{{
+                                state
+                                }}</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="state?.touched && state?.errors?.required">State required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field appearance="outline" class="input">
+                        <mat-label>City</mat-label>
+                        <mat-select matInput class="form-control" formControlName="city">
+                            <mat-option *ngFor="let city of cities[myForm.value.state]" [value]="city">{{ city }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="city?.touched && city?.errors?.required">first name required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field appearance="outline" class="input">
+                        <mat-label>Password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" class="form-control"
+                            formControlName="password" required />
+                        <mat-icon matSuffix (click)="hide = !hide">{{
+                            hide ? "visibility_off" : "visibility"
+                            }}</mat-icon>
+                        <mat-error *ngIf="password?.touched && password?.invalid">
+                            <mat-error *ngIf="password?.errors?.required">
+                                Password is <strong>required</strong>
+                            </mat-error>
+                            <mat-error *ngIf="password?.touched && !password?.errors?.minLength">
+                                Password must be min {{password?.errors?.minLength?.requiredLength}} characetrs
+                            </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <!-- <div class="form-group">
+            <mat-form-field appearance="outline" class="input">
+              <mat-label>Confirm Password</mat-label>
+              <input
+                matInput
+                [type]="hide ? 'password' : 'text'"
+                class="form-control"
+                formControlName="confirm_password"
+                required
+              />
+              <mat-icon matSuffix (click)="hide = !hide">{{
+                hide ? "visibility_off" : "visibility"
+              }}</mat-icon>
+             <mat-error *ngIf="password?.touched && password?.invalid">
+                  <mat-error *ngIf="password?.errors?.required">
+                    Password is <strong>required</strong>
+                  </mat-error>
+                </mat-error>
+            </mat-form-field>
+          </div> -->
+            </mat-card-content>
+            <div class="button">
+                <button mat-stroked-button color="primary" disabled [disabled]="!myForm.valid">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </mat-card>
+</div>
