@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MyserviceService } from './../myservice.service';
 
 @Component({
   selector: 'app-home-component',
@@ -10,7 +11,13 @@ import { Router } from '@angular/router';
 export class HomeComponentComponent implements OnInit {
   myForm: FormGroup;
   hide = true;
-  constructor(public fb: FormBuilder, private route: Router) {
+  userInfo: any = {};
+  invalidLogin: boolean | any;
+  constructor(
+    public fb: FormBuilder,
+    private service: MyserviceService,
+    private route: Router
+  ) {
     this.myForm = fb.group({
       email: [
         '',
@@ -23,8 +30,13 @@ export class HomeComponentComponent implements OnInit {
     });
   }
   onSubmit(e: any) {
-    console.log('Hello there');
-    this.route.navigate(['/', 'dashboard']);
+    this.service.loginHandler(e.value).subscribe((res: any) => {
+      if (res === 'error') this.invalidLogin = true;
+      else if (res && res.result) {
+        localStorage.setItem('token', res.result);
+        this.route.navigate(['/', 'dashboard']);
+      }
+    });
   }
 
   get email() {

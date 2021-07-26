@@ -28,7 +28,7 @@ import { ProfileComponent } from '../profile/profile.component';
     ReactiveFormsModule,
     RouterModule.forChild([
       { path: '', pathMatch: 'full', redirectTo: 'home' },
-      { path: 'home', component: DashboardComponent }, // here
+      { path: 'home', component: HomeComponentComponent }, // here
       { path: 'sign-up', component: SignupComponent },
       { path: 'dashboard', component: DashboardComponent },
     ]),

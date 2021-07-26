@@ -17,6 +17,14 @@ export class MyserviceService {
     return this.http.get(`${this.ipAdress}/games`);
   }
 
+  loginHandler(body: any) {
+    return this.http.post(`${this.ipAdress}/auth/login`, body);
+  }
+
+  signUpHandler(body: any) {
+    return this.http.post(`${this.ipAdress}/auth/signup`, body);
+  }
+
   logoutHandler() {
     localStorage.removeItem('token');
   }

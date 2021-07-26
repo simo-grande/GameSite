@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MyserviceService } from './../myservice.service';
 
 @Component({
   selector: 'app-signup',
@@ -18,7 +19,12 @@ export class SignupComponent implements OnInit {
     AZ: ['Phonix', 'Taxon', 'Gilbert', 'Mesa', 'Tempe'],
   };
   hide: boolean = true;
-  constructor(public fb: FormBuilder, private route: Router) {
+  invalidEmail: boolean | any;
+  constructor(
+    public fb: FormBuilder,
+    private service: MyserviceService,
+    private route: Router
+  ) {
     this.myForm = fb.group({
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
@@ -29,17 +35,26 @@ export class SignupComponent implements OnInit {
           Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
         ],
       ],
+      password: ['', [Validators.required, Validators.minLength(3)]],
       phone_number: [
         ,
         [Validators.pattern('^((\\+1-?)|0)?[0-9]{10}$'), Validators.required],
       ],
-      state: ['', [Validators.required]],
-      city: ['', [Validators.required]],
-      password: ['', [Validators.required, Validators.minLength(4)]],
+      address: fb.group({
+        street: '',
+        city: ['', [Validators.required]],
+        state: ['', [Validators.required]],
+        zipcode: '',
+      }),
     });
+    console.log(this.myForm.value);
   }
   submit(e: any) {
-    this.route.navigate(['/', 'home']);
+    this.service.signUpHandler(e.value).subscribe((res: any) => {
+      if (res.status === 'exists') this.invalidEmail = true;
+      else this.route.navigate(['/', 'home']);
+      console.log(res.status);
+    });
   }
 
   get email() {

@@ -11,6 +11,8 @@ import { MyserviceService } from './../myservice.service';
 export class InvitesComponent implements OnInit {
   myForm: FormGroup;
   user: any;
+  currentUser: any;
+  obj:any
   schedules: string[] = [
     'Tournament Single Elimination',
     'Tournament Double Elimination',
@@ -36,12 +38,14 @@ export class InvitesComponent implements OnInit {
       time: ['', Validators.required],
       schedule_type: ['', Validators.required],
     });
-
+    this.currentUser = this.service.currentUser.id;
     this.user = this.router.getCurrentNavigation()?.extras.state?.user;
     // console.log(this.user);
+    // this.obj = { ...this.myForm, userId: this.currentUser };
   }
+
   onSubmit(e: any) {
-    this.service.new_game_schedule(e.value).subscribe((res: any) => {
+    this.service.new_game_schedule({...e.value,userId:this.currentUser}).subscribe((res: any) => {
       console.log(this.myForm);
       this.router.navigate(['dashboard']);
     });
@@ -63,5 +67,8 @@ export class InvitesComponent implements OnInit {
     return this.myForm.get('schedule_type');
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.currentUser = this.service.currentUser.id;
+    console.log(this.currentUser);
+  }
 }

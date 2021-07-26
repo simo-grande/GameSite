@@ -6,7 +6,7 @@
         <a class="navbar-brand" style="padding: 5px">GAMING SITE</a>
         <span class="flexExpand"></span>
         <div>
-            <a mat-button [routerLink]="['/sign-up']"> Create Free Account </a>
+            <a mat-button [routerLink]="['/sign-up']" style="flex:1"> Create Free Account </a>
         </div>
     </mat-toolbar-row>
 </mat-toolbar>
@@ -24,8 +24,7 @@
                     GAMING SITE WITH EASY SCHEDULING SOFTWARE TO HELP PEOPLE CONNECT EASILY FOR HAVING FUN
                 </p>
             </mat-card-content>
-            <img src="https://cdn.logojoy.com/wp-content/uploads/2018/05/01112536/5_big12.png"
-                width="400" />
+            <img src="https://cdn.logojoy.com/wp-content/uploads/2018/05/01112536/5_big12.png" width="400" />
 
             <div class="get-started">
                 <button mat-stroked-button color="primary" [routerLink]="['/sign-up']">
@@ -41,6 +40,7 @@
                 <mat-card-header>
                     <mat-card-title> Already a Customer ? Login Here</mat-card-title>
                 </mat-card-header>
+                <mat-error *ngIf="invalidLogin" class="alert alert-danger">Invalid username and/or password.</mat-error>
                 <mat-card-content fxLayout="column">
                     <div class="form-group">
                         <mat-form-field class="full-width" appearance="outline">
@@ -68,7 +68,7 @@
                                     Password is <strong>required</strong>
                                 </mat-error>
                                 <mat-error *ngIf="password?.touched && !password?.errors?.minLength">
-                                    Password must be min 8 characetrs
+                                    Password must be min 3 characetrs
                                 </mat-error>
                             </mat-error>
 

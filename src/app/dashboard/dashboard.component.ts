@@ -8,7 +8,7 @@ import { MyserviceService } from './../myservice.service';
 })
 export class DashboardComponent implements OnInit {
   games: any;
-  constructor(private service: MyserviceService) {}
+  constructor(public service: MyserviceService) {}
 
   ngOnInit(): void {
     this.service.getAllGames().subscribe((res: any) => {
