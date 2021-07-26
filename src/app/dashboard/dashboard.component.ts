@@ -16,4 +16,8 @@ export class DashboardComponent implements OnInit {
       console.log(this.games);
     });
   }
+
+  requestQuote(game: any): void{
+    console.log(game);
+  }
 }
