@@ -37,6 +37,10 @@ export class MyserviceService {
     return this.http.get(`${this.ipAdress}/users/${id}`);
   }
 
+  update_password(id: any, body: any) {
+    return this.http.put(`${this.ipAdress}/users/${id}`, body);
+  }
+
   get currentUser() {
     let token = localStorage.getItem('token');
     if (!token) return null;

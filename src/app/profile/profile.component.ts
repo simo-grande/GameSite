@@ -12,7 +12,7 @@ import { MyserviceService } from './../myservice.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styles: [],
+  styleUrls: ['profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
   users: any;
@@ -23,6 +23,8 @@ export class ProfileComponent implements OnInit {
     this.currentUser = this.service.currentUser.id;
     this.service.getUser(this.currentUser).subscribe((res: any) => {
       this.users = res.data;
+      console.log(this.users);
+      
     });
   }
 }

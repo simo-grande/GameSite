@@ -1,7 +1,8 @@
 <ng-container>
     <mat-card class="example-card">
+        <div mat-card-avatar class="example-header-image"></div>
         <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
+
             <mat-card-title>{{users?.firstName}} {{users?.lastName}}</mat-card-title>
             <mat-card-subtitle>Email: {{users?.email}}</mat-card-subtitle>
         </mat-card-header>
@@ -13,7 +14,7 @@
         <mat-card-content>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button>
+            <button mat-button style="background-color: rgba(192, 34, 121, 0.993);">
                 <a [routerLink]="['/', 'edit_profile']" [state]="{ user:users }">
                     Edit Profile
                 </a></button>

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MyserviceService } from './../myservice.service';
 import {
-
   FormGroup,
   FormBuilder,
   Validators,
@@ -13,14 +12,16 @@ import {
 @Component({
   selector: 'app-edit-password',
   templateUrl: './edit-password.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class EditPasswordComponent implements OnInit {
-
   user: any;
   myForm: FormGroup;
-  constructor(private router: Router, private formBuilder: FormBuilder,public service:MyserviceService) {
+  constructor(
+    private router: Router,
+    private formBuilder: FormBuilder,
+    public service: MyserviceService
+  ) {
     this.myForm = formBuilder.group(
       {
         oldPassword: ['', [Validators.required]],
@@ -31,11 +32,15 @@ export class EditPasswordComponent implements OnInit {
     );
 
     this.user = this.router.getCurrentNavigation()?.extras.state?.user;
-    // console.log(this.user);
+    console.log(this.user);
   }
-  onSubmit() {
-    console.log(this.myForm);
-    this.router.navigate(['dashboard']);
+  onSubmit(e: any) {
+    this.service
+      .update_password(this.user._id, e.value)
+      .subscribe((res: any) => {
+        console.log(this.myForm);
+        this.router.navigate(['dashboard']);
+      });
   }
 
   get oldPassword() {
@@ -73,5 +78,4 @@ export class EditPasswordComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-
 }
