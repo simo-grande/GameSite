@@ -5,7 +5,7 @@
             <mat-card-header>
                 <h2 class="form-signin-heading">New Schedule</h2>
             </mat-card-header>
-
+          
             <div class="form-group">
                 <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label for="game_name">Select your game...</mat-label>
@@ -27,6 +27,13 @@
                     <!-- <mat-error *ngIf="no_players?.invalid && no_players?.touched" class="alert alert-danger">
                         <mat-error *ngIf="no_players?.errors?.required">Password is required.</mat-error>
                     </mat-error> -->
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label for="no_players">Add photo URL</mat-label>
+                    <input type="text" matInput class="form-control" id="pic_url" formControlName="pic_url" />
                 </mat-form-field>
             </div>
 
@@ -61,7 +68,7 @@
                     </mat-error> -->
                 </mat-form-field>
             </div>
-
+            <mat-error *ngIf="invalidPost" class="alert alert-danger">You already have uncompleted game.</mat-error>
             <button mat-stroked-button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">
                 Schedule
             </button>

@@ -10,6 +10,10 @@ import { SignupComponent } from '../signup/signup.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { InvitesComponent } from '../invites/invites.component';
 import { ProfileComponent } from '../profile/profile.component';
+import { QuoteformComponent } from '../quoteform/quoteform.component';
+import { EditPasswordComponent } from '../edit-password/edit-password.component';
+import { YourQuotesComponent } from '../your-quotes/your-quotes.component';
+import { AccessGuard } from './../access.guard';
 
 @NgModule({
   declarations: [
@@ -19,6 +23,9 @@ import { ProfileComponent } from '../profile/profile.component';
     DashboardComponent,
     InvitesComponent,
     ProfileComponent,
+    QuoteformComponent,
+    EditPasswordComponent,
+    YourQuotesComponent,
   ],
   imports: [
     CommonModule,
@@ -30,7 +37,21 @@ import { ProfileComponent } from '../profile/profile.component';
       { path: '', pathMatch: 'full', redirectTo: 'home' },
       { path: 'home', component: HomeComponentComponent }, // here
       { path: 'sign-up', component: SignupComponent },
-      { path: 'dashboard', component: DashboardComponent },
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+        canActivate: [AccessGuard],
+      },
+      {
+        path: 'quoteForm',
+        component: QuoteformComponent,
+        canActivate: [AccessGuard],
+      },
+      {
+        path: 'edit_profile',
+        component: EditPasswordComponent,
+        canActivate: [AccessGuard],
+      },
     ]),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

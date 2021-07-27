@@ -29,6 +29,14 @@ export class MyserviceService {
     localStorage.removeItem('token');
   }
 
+  reserve_quote(body: any) {
+    return this.http.post(`${this.ipAdress}/quotes`, body);
+  }
+
+  getUser(id: any) {
+    return this.http.get(`${this.ipAdress}/users/${id}`);
+  }
+
   get currentUser() {
     let token = localStorage.getItem('token');
     if (!token) return null;

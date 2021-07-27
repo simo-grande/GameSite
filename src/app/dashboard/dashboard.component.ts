@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MyserviceService } from './../myservice.service';
 
 @Component({
@@ -8,16 +9,19 @@ import { MyserviceService } from './../myservice.service';
 })
 export class DashboardComponent implements OnInit {
   games: any;
-  constructor(public service: MyserviceService) {}
+  currentUser: any;
+  constructor(public service: MyserviceService, private route: Router) {}
 
   ngOnInit(): void {
     this.service.getAllGames().subscribe((res: any) => {
       this.games = res.data;
       console.log(this.games);
     });
+    this.currentUser = this.service.currentUser.id;
   }
 
-  requestQuote(game: any): void{
-    console.log(game);
+  requestQuote(game: any): void {
+    this.route.navigate(['quoteForm'], { state: { game: game } });
+ //   console.log(game);
   }
 }
