@@ -5,9 +5,9 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./users-module/users-module.module').then((m) => {
-        return m.UsersModuleModule;
-      }),
+    import('./users-module/users-module.module').then((m) => {
+      return m.UsersModuleModule;
+    }),
   },
 ];
 

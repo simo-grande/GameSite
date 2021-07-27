@@ -9,3 +9,32 @@
   background-image: url("https://tse3.mm.bing.net/th?id=OIP.Kq5Uhv3mTZU5zGEdZWcBiAHaD9&pid=Api&P=0&w=318&h=171");
   background-size: cover;
 }
+
+.footer-demo {
+  height: 100%; /* Angular material adds "height:100%" to body tag by default. So, ignore this step in real-time application */
+}
+
+.demo-section {
+  border: 1px solid #bbb;
+}
+
+footer {
+  background-color: #ddd;
+  border-top: 1px solid #bbb;
+  text-align: center;
+}
+
+#clickFooter footer:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+#btmFooter {
+  align-self: flex-end;
+  margin: 60px 0;
+  text-align: center;
+}
+
+#clickFooter {
+  position: relative;
+}
