@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
         <mat-icon>games</mat-icon>
-        <a class="navbar-brand" style="padding: 5px">GAMING SITE</a>
+        <a class="navbar-brand" style="padding: 35px">GAMING SITE</a>
         <span class="flexExpand"></span>
         <div>
             <a mat-button [routerLink]="['/home']"> Already have an account ? </a>
@@ -85,7 +85,8 @@
                                 <mat-form-field appearance="outline" class="input">
                                     <mat-label>City</mat-label>
                                     <mat-select matInput class="form-control" formControlName="city">
-                                        <mat-option *ngFor="let city of cities[myForm.value.address.state]" [value]="city">{{
+                                        <mat-option *ngFor="let city of cities[myForm.value.address.state]"
+                                            [value]="city">{{
                                             city }}
                                         </mat-option>
                                     </mat-select>
@@ -107,7 +108,7 @@
 
 
 
-                
+
 
                 <!-- <div class="form-group">
                     <mat-form-field appearance="outline" class="input">

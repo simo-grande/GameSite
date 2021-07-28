@@ -1,17 +1,3 @@
-.example-card {
-  margin: 0 auto;
-  width: 29%;
-  display: inline-block;
-  vertical-align: middle;
-  justify-content: center;
-  align-items: center;
-}
-
-.example-header-image {
-  background-image: url("https://tse3.mm.bing.net/th?id=OIP.Kq5Uhv3mTZU5zGEdZWcBiAHaD9&pid=Api&P=0&w=318&h=171");
-  background-size: cover;
-}
-
 .mat-tab-header {
   background-color: #424242;
 }
@@ -25,12 +11,11 @@
 }
 
 footer {
-  background-image: url('https://media.contentapi.ea.com/content/dam/eacom/en-us/common/october-ea-ring.png');
+  background-image: url("https://media.contentapi.ea.com/content/dam/eacom/en-us/common/october-ea-ring.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   margin: 40px;
-  /* background-color: #ddd; */
   border-top: 1px solid #bbb;
   text-align: center;
 }
@@ -42,7 +27,7 @@ footer {
 
 #btmFooter {
   align-self: flex-end;
-  margin: 160px;
+  margin: 160px 0;
   text-align: center;
 }
 

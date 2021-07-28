@@ -44,7 +44,7 @@ export class QuoteformComponent implements OnInit {
     this.service
       .reserve_quote({
         ...e.value,
-        userId: this.game.userId,
+        userId: this.currentUser,
         gameId: this.game._id,
       })
       .subscribe((res: any) => {

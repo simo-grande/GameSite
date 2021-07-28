@@ -6,7 +6,7 @@ import { MyserviceService } from './../myservice.service';
 @Component({
   selector: 'app-home-component',
   templateUrl: './home.component.html',
-  styles: [],
+  styleUrls: ['home.component.css'],
 })
 export class HomeComponentComponent implements OnInit {
   myForm: FormGroup;

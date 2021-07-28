@@ -41,6 +41,10 @@ export class MyserviceService {
     return this.http.put(`${this.ipAdress}/users/${id}`, body);
   }
 
+  your_quotes(userId: any) {
+    return this.http.get(`${this.ipAdress}/quotes/${userId}`);
+  }
+
   get currentUser() {
     let token = localStorage.getItem('token');
     if (!token) return null;

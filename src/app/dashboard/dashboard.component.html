@@ -2,7 +2,7 @@
     <mat-toolbar color="primary">
         <mat-toolbar-row>
             <mat-icon>games</mat-icon>
-            <a class="navbar-brand" style="padding: 5px">GAMING SITE</a>
+            <a class="navbar-brand" style="padding: 35px">GAMING SITE</a>
             <span class="flexExpand"></span>
             <div fxFlex fxLayoutAlign="flex-end center">
                 <a href="#" mat-button [routerLink]="['/home']" (click)="service.logoutHandler()">Log-Out</a>
@@ -10,7 +10,7 @@
         </mat-toolbar-row>
     </mat-toolbar>
 </div>
-<mat-tab-group color="accent" backgroundColor="primary">
+<mat-tab-group color="accent" backgroundColor="primary" class="mat-tab-header">
     <mat-tab label="Games">
         <!-- <mat-paginator [length]="50" [pageSizeOptions]="[5]"> </mat-paginator> -->
         <mat-divider></mat-divider>
@@ -54,6 +54,9 @@
     <mat-tab label="Invite People">
         <app-invites></app-invites>
     </mat-tab>
+    <mat-tab label="Your Quotes">
+        <app-your-quotes></app-your-quotes>
+    </mat-tab>
     <mat-tab><span class="example-spacer"></span></mat-tab>
     <mat-tab>
         <ng-template mat-tab-label>
@@ -69,7 +72,7 @@
     </mat-tab> -->
 </mat-tab-group>
 <footer class="md-padding">
-  <div id="btmFooter" flex>
-    <p>My Footer</p>
-  </div>
+    <div id="btmFooter" flex>
+        <p style="font-style: italic;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">EA-Sports</p>
+    </div>
 </footer>

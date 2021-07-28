@@ -1,5 +1,10 @@
 .example-card {
-    max-width: 400px;
+    margin: 0 auto;
+    width: 29%;
+    display: inline-block;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
   }
   
   .example-header-image {
