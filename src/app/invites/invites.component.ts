@@ -49,9 +49,7 @@ export class InvitesComponent implements OnInit {
       .new_game_schedule({ ...e.value, userId: this.currentUser })
       .subscribe((res: any) => {
         if (res.status === 'already posted') this.invalidPost = true;
-        else {
-          this.router.navigate(['dashboard']);
-        }
+        else if (res.status === 'success') this.router.navigate(['dashboard']);
       });
   }
 

@@ -22,6 +22,15 @@ export class DashboardComponent implements OnInit {
 
   requestQuote(game: any): void {
     this.route.navigate(['quoteForm'], { state: { game: game } });
- //   console.log(game);
+    //   console.log(game);
+  }
+
+  deleteGame(id: any): void {
+    this.service.deleteGame(id).subscribe((res: any) => {
+      if (res.status === 'success') {
+        alert('You have succesfully removed your game!');
+        this.route.navigate(['dashboard']);
+      }
+    });
   }
 }

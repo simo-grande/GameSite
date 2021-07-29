@@ -45,6 +45,10 @@ export class MyserviceService {
     return this.http.get(`${this.ipAdress}/quotes/${userId}`);
   }
 
+  deleteGame(id: any) {
+    return this.http.delete(`${this.ipAdress}/games/${id}`);
+  }
+
   get currentUser() {
     let token = localStorage.getItem('token');
     if (!token) return null;

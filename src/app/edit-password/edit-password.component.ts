@@ -12,7 +12,7 @@ import {
 @Component({
   selector: 'app-edit-password',
   templateUrl: './edit-password.component.html',
-  styles: [],
+  styleUrls: ['edit-password.component.css'],
 })
 export class EditPasswordComponent implements OnInit {
   user: any;
