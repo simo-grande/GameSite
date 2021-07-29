@@ -29,6 +29,10 @@ export class DashboardComponent implements OnInit {
     this.service.deleteGame(id).subscribe((res: any) => {
       if (res.status === 'success') {
         alert('You have succesfully removed your game!');
+        this.service.getAllGames().subscribe((res: any) => {
+          this.games = res.data;
+          console.log(this.games);
+        });
         this.route.navigate(['dashboard']);
       }
     });

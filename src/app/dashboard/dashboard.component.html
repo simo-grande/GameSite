@@ -64,7 +64,17 @@
     </mat-tab>
 
     <mat-tab label="Invite People">
-        <app-invites></app-invites>
+        <div style="height: 100%;">
+         
+        <mat-card-actions>
+            <button mat-button class="btn1">
+                <a [routerLink]="['/', 'invite']">
+                CLICK HERE TO CREATE SCHEDULE
+                </a></button>
+        </mat-card-actions>
+        <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+    </div> 
+        <!-- <app-invites></app-invites> -->
     </mat-tab>
     <mat-tab label="Your Quotes">
         <app-your-quotes></app-your-quotes>

@@ -6,7 +6,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   providedIn: 'root',
 })
 export class MyserviceService {
-  ipAdress = 'http://127.0.0.1:3000';
+  ipAdress = 'http://192.168.56.167:3000';
   constructor(private http: HttpClient) {}
 
   new_game_schedule(body: any) {

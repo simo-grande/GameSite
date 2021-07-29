@@ -6,7 +6,7 @@ import { MyserviceService } from './../myservice.service';
 @Component({
   selector: 'app-invites',
   templateUrl: './invites.component.html',
-  styles: [],
+  styleUrls: ['invites.component.css'],
 })
 export class InvitesComponent implements OnInit {
   myForm: FormGroup;
@@ -29,7 +29,7 @@ export class InvitesComponent implements OnInit {
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
-    private service: MyserviceService
+    public service: MyserviceService
   ) {
     this.myForm = formBuilder.group({
       game_name: ['', [Validators.required]],
@@ -45,11 +45,18 @@ export class InvitesComponent implements OnInit {
   }
 
   onSubmit(e: any) {
+    // console.log(e.value)
+    // this.router.navigate(['dashboard']);
+  
     this.service
       .new_game_schedule({ ...e.value, userId: this.currentUser })
       .subscribe((res: any) => {
+        console.log(res.status)
         if (res.status === 'already posted') this.invalidPost = true;
-        else if (res.status === 'success') this.router.navigate(['dashboard']);
+        else if (res.status === 'success') {
+          console.log(res.status);
+          
+          this.router.navigate(['dashboard'])};
       });
   }
 

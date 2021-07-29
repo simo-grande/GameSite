@@ -48,6 +48,11 @@ import { AccessGuard } from './../access.guard';
         canActivate: [AccessGuard],
       },
       {
+        path: 'invite',
+        component: InvitesComponent,
+        canActivate: [AccessGuard],
+      },
+      {
         path: 'edit_profile',
         component: EditPasswordComponent,
         canActivate: [AccessGuard],

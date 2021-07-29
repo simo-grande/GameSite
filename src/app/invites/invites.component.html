@@ -1,11 +1,35 @@
-<div fxLayout="row" fxLayoutAlign="center center" style="padding: 20px; text-align: center; width: 600px; height: 700px; max-width: 650px;">
+<head>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<div fxShow="true" fxHide.lt-md fxFlex fxLayout>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <a>
+                <div mat-card-avatar class="example-header-image"></div>
+            </a>
+            <a class="navbar-brand" style="padding: 35px">GAMING SITE</a>
+            <!-- <span class="flexExpand"></span> -->
+            <div style=" flex: 1 1 auto;">
+                <span class="example-fill-remaining-space"></span>
+                <a href="#" mat-button [routerLink]="['/home']" (click)="service.logoutHandler()">Log-Out</a>
+
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center center"
+    style="padding: 20px; text-align: center; width: 600px; height: 700px; max-width: 650px; background-color: #424242;">
     <mat-card>
 
         <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
             <mat-card-header>
-                <h2 class="form-signin-heading" style="align-items: center;">Post your Game by filling out this Form</h2>
+                <h2 class="form-signin-heading" style="align-items: center;">Post your Game by filling out this Form
+                </h2>
             </mat-card-header>
-          
+
             <div class="form-group">
                 <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label for="game_name">Select your game...</mat-label>
@@ -76,3 +100,41 @@
 
     </mat-card>
 </div>
+<footer class="container">
+    <!-- <div id="btmFooter" flex>
+        <p style="font-style: italic;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            EA-Sports</p>
+    </div> -->
+    <div class="container">
+        <div class="row">
+            <a>
+                <div mat-card-avatar class="example-header-image"></div>
+            </a>
+            <div class="footer-col">
+                <h4>company</h4>
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Get Help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Details</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>

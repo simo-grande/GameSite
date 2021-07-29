@@ -1,0 +1,159 @@
+.example-card {
+    margin: 0 auto;
+    width: 29%;
+    display: inline-block;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .example-header-image {
+    background-image: url("data:image/png;base64,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");
+    background-size: cover;
+  }
+  .btn1 {
+    padding: 0 6px 0 6px;
+    margin: 6px 8px 6px 8px;
+    min-width: 88px;
+    border-radius: 3px;
+    font-size: 14px;
+    background-color: rgb(216, 49, 99);
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    outline: none;
+  }
+  
+  .mat-tab-header {
+    background-color: #424242;
+  }
+  
+  .footer-demo {
+    height: 100%; /* Angular material adds "height:100%" to body tag by default. So, ignore this step in real-time application */
+  }
+  
+  .demo-section {
+    border: 1px solid #bbb;
+  }
+  html {
+    height: 100%;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+  
+  footer {
+    background-position: center center;
+    background-color: #970c41d2;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 40px;
+    bottom: 0;
+    border-top: 1px solid #bbb;
+    text-align: center;
+    bottom: 0;
+  }
+  
+  #clickFooter footer:hover {
+    background-color: rgb(10, 1, 1);
+    cursor: pointer;
+    bottom: 0;
+  }
+  
+  #btmFooter {
+    align-self: flex-end;
+    margin: 160px;
+    text-align: center;
+    bottom: 0;
+  }
+  
+  #clickFooter {
+    position: relative;
+    bottom: 0;
+  }
+  
+  .footer {
+    background-color: #24262b;
+    padding: 70px 0;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .container {
+    max-width: 1970px;
+    margin: auto;
+  }
+  ul {
+    list-style: none;
+  }
+  .footer-col {
+    width: 25%;
+    padding: 0 15px;
+  }
+  .footer-col h4 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    position: relative;
+  }
+  .footer-col h4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 500px;
+  }
+  .footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  .footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+  }
+  .footer-col ul li a:hover {
+    color: #f5f5f3;
+    padding-left: 8px;
+  }
+  .footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: white;
+    transition: all 0.5s ease;
+  }
+  .footer-col .social-links a:hover{
+    color: #24262b;
+    background-color: #ffffff;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .example-fill-remaining-space {
+    flex: 1 1 auto;
+    margin-right: 900px;
+  }
+  
